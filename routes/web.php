@@ -11,6 +11,18 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::view('/', function () {
+    return view('home');
 });
+
+Route::get('/contactos', function () {
+    return view('contactos');
+});
+Route::resource('/gastos', 'GastoController');
+Route::resource('/ingresos', 'IngresoController');
+
+
+
+
+
+
