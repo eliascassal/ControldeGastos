@@ -1,7 +1,16 @@
-<html>
-<title>registro de los gastos</title>
-<head></head>
-<body>
-    <h1>Registros de los gastos</h1>
-</body>
-</html>
+@extends('layout')
+
+@section('title', 'Gastos')
+
+
+@section('contenido')
+
+<H2>mes de septiembre</H2>
+<span>detalle de gastos</span>
+<ol>
+    <li>gasto 1</li>
+    <li>gasto 2</li>
+</ol>
+
+@endsection
+

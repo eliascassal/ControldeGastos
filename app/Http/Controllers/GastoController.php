@@ -15,6 +15,8 @@ class GastoController extends Controller
     public function index()
     {
         return view('gastos.gastos');
+
+        
     }
 
     /**

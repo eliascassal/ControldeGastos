@@ -11,7 +11,7 @@
 |
 */
 
-Route::view('/', function () {
+Route::get('/', function () {
     return view('home');
 });
 
