@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Gasto;
 use Illuminate\Http\Request;
 
-class GastoController extends Controller
+class IngresoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,10 +13,9 @@ class GastoController extends Controller
      */
     public function index()
     {
-        $gastos= Gasto::All();
-        return view('gastos.gastos', compact('gastos'));
+        $ingresos= Ingreso::All();
+        return view('ingresos.ingresos', compact('ingresos'));
 
-        
     }
 
     /**
@@ -27,7 +25,7 @@ class GastoController extends Controller
      */
     public function create()
     {
-        return view ('gastos.CreateGasto');
+        //
     }
 
     /**
@@ -38,41 +36,27 @@ class GastoController extends Controller
      */
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
-            'nombregasto'=>'required',
-            'monto'=>'required|int'
-            ]);
-       $gastos = new Gasto(); 
-        
-        $gastos->descripcion = $request->input('descripcion');
-        $gastos->nombregasto = $request->input('nombregasto');
-        $gastos->monto = $request->input('monto');
-        $gastos->fechagasto = $request->input('fechagasto');
-        $gastos->save();
-
-        $gastos = Gasto::All();
-        return view('gastos.gastos', compact('gastos'));    
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Gasto  $gasto
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Gasto $gasto)
+    public function show($id)
     {
-        $gastos = Gasto::All();
-        return view('gastos.gastos', compact('gastos'));
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Gasto  $gasto
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Gasto $gasto)
+    public function edit($id)
     {
         //
     }
@@ -81,10 +65,10 @@ class GastoController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Gasto  $gasto
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Gasto $gasto)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -92,10 +76,10 @@ class GastoController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Gasto  $gasto
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Gasto $gasto)
+    public function destroy($id)
     {
         //
     }
