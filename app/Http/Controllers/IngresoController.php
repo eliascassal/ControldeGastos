@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+
+use App\Ingreso;
 use Illuminate\Http\Request;
 
 class IngresoController extends Controller
@@ -25,7 +27,7 @@ class IngresoController extends Controller
      */
     public function create()
     {
-        //
+        return view ('ingresos.CreateIngreso');
     }
 
     /**
@@ -36,7 +38,20 @@ class IngresoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'nombreingreso'=>'required',
+            'monto'=>'required|int'
+            ]);
+       $ingresos = new ingreso(); 
+        
+        $ingresos->descripcion = $request->input('descripcion');
+        $ingresos->nombreingreso = $request->input('nombreingreso');
+        $ingresos->monto = $request->input('monto');
+        $ingresos->fechaingreso = $request->input('fechaingreso');
+        $ingresos->save();
+
+        $ingresos = Ingreso::All();
+        return view('ingresos.ingresos', compact('ingresos'));   
     }
 
     /**

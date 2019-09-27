@@ -14,10 +14,8 @@
 Route::get('/', function () {
     return view('home');
 });
-
-Route::get('/contactos', function () {
-    return view('contactos');
-});
+route::get('/contacto','MessageController@index')->name('contacto');
+Route::post('/contacto', 'MessageController@store');
 Route::resource('/gastos', 'GastoController');
 Route::resource('/ingresos', 'IngresoController');
 
