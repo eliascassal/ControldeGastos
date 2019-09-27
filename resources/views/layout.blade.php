@@ -17,16 +17,8 @@
 	</head>
 
 	<body> 
-		{{(request())->path()}}"
-		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-			<a href="#" class="navbar-brand">@yield('title1')</a>
-            <ol>
-                <li class="{{ request()->routeIs('/') ? 'active' : ''}}">			<a href="/">--HOME--</a>   				</li>
-				<li class="{{ request()->routeIs('/gastos') ? 'active' : ''}}" >	<a href="/gastos">--GASTOS--</a>		</li>
-				<li class="{{ request()->routeIs('/ingresos') ? 'active' : ''}}">	<a  href="/ingresos">--INGRESOS--</a>	</li>
-				<li class="{{ request()->routeIs('/contacto') ? 'active' : ''}}" >	<a href="/contacto">--CONTACTOS--</a> 	</li>
-            </ol>   
-		</nav>
+		
+		@include('partials.nav')
 		<div class="container">
 
 			@yield('contenido')

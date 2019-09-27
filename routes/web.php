@@ -11,16 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::view('/', 'home')->name('home');
+
 route::get('/contacto','MessageController@index')->name('contacto');
 Route::post('/contacto', 'MessageController@store');
 Route::resource('/gastos', 'GastoController');
 Route::resource('/ingresos', 'IngresoController');
 
 
-
-
-
+Auth::routes();
 

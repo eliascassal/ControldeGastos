@@ -9,4 +9,6 @@
 <h1>hola desde el home</h1>
 
 
+
+
 @endsection
