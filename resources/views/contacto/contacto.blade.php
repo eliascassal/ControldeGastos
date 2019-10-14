@@ -9,7 +9,10 @@
 <span>Formulario de contacto</span>
 
 <div Style= "width: 18rem; margin-top:50px;">
+@if (session('status'))
+{{session('status')}}
 
+@else
 	<form  method="POST" action="{{ route('contacto') }}" enctype="multipart/form-data">
 			@csrf
 			<input type="text" name="nombrecontacto" placeholder="nombres y apellidos" id="nombrecontacto" class="form-control" value="{{old('nombrecontacto')}}"><br>
@@ -25,6 +28,8 @@
         	<button type="submit" class="btn btn-primary">Enviar</button>
 		
 	</form>
+
+	@endif
 </div>
 @endsection
 

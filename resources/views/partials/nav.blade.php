@@ -5,7 +5,7 @@
                 <li class="{{ setActive('home')}}"><a href="/">@lang('Home')</a>   				</li>
 				<li class="{{ setActive ('gastos.*')}}" >	<a href="/gastos">@lang('Gastos')</a>		</li>
 				<li class="{{ setActive('ingresos.*') }}">	<a  href="/ingresos">@lang('Ingresos')</a>	</li>
-				<li class="{{ setActive('contacto.*') }}" >	<a href="/contactos">@lang('Contacto')</a> 	</li>
+				<li class="{{ setActive('contacto.*') }}" >	<a href="/contacto ">@lang('Contacto')</a> 	</li>
 				@guest
 				<li>	<a href="{{route('login')}}">--LOGIN--</a> 	</li>
 				@else

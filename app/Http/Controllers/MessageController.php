@@ -28,7 +28,7 @@ class MessageController extends Controller
         
         Mail::to('eliascassal@gmail.com')->queue(new MensajeRecibido($mensaje));  
             //return new MensajeRecibido($mensaje); 
-            return 'datos validados';
+            return back()->with('status','recibimos tu mensaje te responderemos en breve');
     }
 
 }
